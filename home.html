@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roampass — Travel eSIM Simplified</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .animate-fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s ease;
+    }
+    .animate-fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .btn-brand {
+      background: linear-gradient(to right, #1a73e8, #34a853);
+      color: white;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      transition: all 0.3s ease;
+    }
+    .btn-brand:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    }
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap');
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.animate-fade-up').forEach(el => observer.observe(el));
+    });
+  </script>
+</head>
+<body class="bg-white text-gray-800">
+  <!-- Header -->
+  <header class="w-full sticky top-0 z-50 bg-white shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-2xl md:text-3xl font-extrabold text-blue-600" style="font-family: 'Poppins', sans-serif;">Roampass</h1>
+      <nav class="space-x-6 text-base md:text-lg text-gray-700 font-medium" style="font-family: 'Poppins', sans-serif;">
+        <a href="#features" class="hover:text-blue-600">Features</a>
+        <a href="#plans" class="hover:text-blue-600">Plans</a>
+        <a href="#network" class="hover:text-blue-600">Coverage</a>
+        <a href="#faq" class="hover:text-blue-600">FAQ</a>
+        <a href="#contact" class="hover:text-blue-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-br from-blue-50 to-green-50 text-center py-24 px-6 animate-fade-up">
+    <h2 class="text-4xl font-bold mb-4">Travel connected. Anywhere.</h2>
+    <p class="text-gray-600 max-w-xl mx-auto mb-6">Roampass offers instant eSIM activation for travelers — no roaming fees, no physical SIMs, and no borders.</p>
+    <a href="#plans" class="btn-brand">View Plans</a>
+  </section>
+
+  <!-- Features -->
+  <section id="features" class="py-20 px-6 max-w-6xl mx-auto animate-fade-up">
+    <h3 class="text-2xl font-semibold text-center mb-10">What Makes Roampass Different</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-medium text-blue-600 mb-2">eSIM Simplicity</h4>
+        <p class="text-gray-700">Activate your plan with just a QR code. Compatible with most modern phones.</p>
+      </div>
+      <div>
+        <h4 class="font-medium text-blue-600 mb-2">Global Coverage</h4>
+        <p class="text-gray-700">Access data in over 100 countries, optimized for traveler speed and reliability.</p>
+      </div>
+      <div>
+        <h4 class="font-medium text-blue-600 mb-2">No Roaming Fees</h4>
+        <p class="text-gray-700">Flat-rate prepaid plans. What you see is what you pay — no surprises.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Plans -->
+  <section id="plans" class="py-20 bg-gray-50 px-6 animate-fade-up">
+    <h3 class="text-2xl font-semibold text-center mb-6">Popular Plans</h3>
+    <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">Plans vary by destination and usage. Roampass offers short-term and long-term data bundles.</p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <div class="p-6 rounded-xl bg-white shadow-md w-72">
+        <h4 class="font-semibold mb-2">Asia Travel Pack</h4>
+        <p class="text-sm text-gray-600">5GB | 30 days | 10+ countries</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow-md w-72">
+        <h4 class="font-semibold mb-2">EU Explorer</h4>
+        <p class="text-sm text-gray-600">10GB | 30 days | 30+ countries</p>
+      </div>
+      <div class="p-6 rounded-xl bg-white shadow-md w-72">
+        <h4 class="font-semibold mb-2">Global Pass</h4>
+        <p class="text-sm text-gray-600">1GB/day | 15 days | 100+ regions</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Network -->
+  <section id="network" class="py-20 px-6 max-w-4xl mx-auto animate-fade-up">
+    <h3 class="text-2xl font-semibold text-center mb-4">Worldwide Coverage</h3>
+    <p class="text-center text-gray-600 mb-6">Roampass partners with global telecom infrastructure providers to deliver seamless service across continents.</p>
+    <ul class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-gray-700 text-sm">
+      <li>🇺🇸 USA</li>
+      <li>🇪🇸 Spain</li>
+      <li>🇸🇬 Singapore</li>
+      <li>🇦🇺 Australia</li>
+      <li>🇯🇵 Japan</li>
+      <li>🇰🇷 Korea</li>
+      <li>🇬🇧 UK</li>
+      <li>+ 100 more</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-accent px-6 max-w-3xl mx-auto animate-fade-up">
+    <h3 class="text-2xl font-semibold text-center mb-8">Frequently Asked Questions</h3>
+    <div class="mb-4">
+      <h4 class="font-medium text-blue-600">What is an eSIM?</h4>
+      <p class="text-gray-700">A digital SIM that allows you to connect without inserting a physical card.</p>
+    </div>
+    <div class="mb-4">
+      <h4 class="font-medium text-blue-600">How do I receive my plan?</h4>
+      <p class="text-gray-700">We send a QR code to your email. Scan to install. That’s it.</p>
+    </div>
+    <div class="mb-4">
+      <h4 class="font-medium text-blue-600">Can I get a refund?</h4>
+      <p class="text-gray-700">Refunds are available before QR code activation, or if your device is incompatible.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 px-6 text-center animate-fade-up">
+    <h3 class="text-2xl font-semibold mb-4">Still have questions?</h3>
+    <p class="text-gray-700 mb-2">Reach out anytime. We're here to help.</p>
+    <p class="text-blue-600 text-lg"><a href="mailto:suport@roampass.xylen.uk">suport@roampass.xylen.uk</a></p>
+    <p class="mt-2 text-blue-600"><a href="https://discord.gg/58PBJ9Dg" target="_blank">Join Roampass Club on Discord</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm text-gray-500 bg-gray-100">
+    &copy; 2025 Roampass. Independent brand. All rights reserved.
+  </footer>
+</body>
+</html>
